@@ -23,6 +23,21 @@ function App() {
 
   const [schools, setSchools] = useState([]);
 
+  const [workName, setWorkName] = useState("");
+  const [position, setPosition] = useState("");
+  const [tasks, setTasks] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [works, setWorks] = useState([]);
+
+  const [work, setWork] = useState({
+    workName: "",
+    position: "",
+    tasks: "",
+    startDate: "",
+    endDate: "",
+  });
+
   const handleFirstName = (newFirstName) => {
     setFirstName(newFirstName);
   };
@@ -78,7 +93,68 @@ function App() {
     handleFieldOfStudy(e);
     handleDateOfGraduation(e);
     e.preventDefault();
-    console.log("bitch");
+  };
+
+  const handleWorkName = (newWorkName) => {
+    setWorkName(newWorkName);
+    setWork((work) => ({
+      ...work,
+      workName: newWorkName,
+    }));
+  };
+
+  const handlePosition = (newPosition) => {
+    setPosition(newPosition);
+    setWork((work) => ({
+      ...work,
+      position: newPosition,
+    }));
+  };
+
+  const handleTasks = (newTasks) => {
+    setTasks(newTasks);
+    setWork((work) => ({
+      ...work,
+      tasks: newTasks,
+    }));
+  };
+
+  const handleStartDate = (newStartDate) => {
+    setStartDate(newStartDate);
+    setWork((work) => ({
+      ...work,
+      startDate: newStartDate,
+    }));
+  };
+
+  const handleEndDate = (newEndDate) => {
+    setEndDate(newEndDate);
+    setWork((work) => ({
+      ...work,
+      endDate: newEndDate,
+    }));
+  };
+
+  const handleWorks = (newWork) => {
+    setWorks(works.concat(newWork));
+  };
+
+  const handleWorkSubmit = (e) => {
+    handleWorks(work);
+    setWork({
+      workName: workName,
+      position: position,
+      tasks: tasks,
+      startDate: startDate,
+      endDate: endDate,
+    });
+    handleWorkName(e);
+    handlePosition(e);
+    handleTasks(e);
+    handleStartDate(e);
+    handleEndDate(e);
+    e.preventDefault();
+    console.log(works);
   };
 
   return (
@@ -97,6 +173,13 @@ function App() {
         handleDateOfGraduation={handleDateOfGraduation}
         handleSchools={handleSchools}
         handleSchoolSubmit={handleSchoolSubmit}
+        handleWorkName={handleWorkName}
+        handlePosition={handlePosition}
+        handleTasks={handleTasks}
+        handleStartDate={handleStartDate}
+        handleEndDate={handleEndDate}
+        handleWorks={handleWorks}
+        handleWorkSubmit={handleWorkSubmit}
       />
       <Output
         firstName={firstName}
@@ -104,6 +187,7 @@ function App() {
         email={email}
         phone={phone}
         schools={schools}
+        works={works}
       />
     </div>
   );

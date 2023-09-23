@@ -3,6 +3,14 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  list-style: none;
+}
+
+#education-info {
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 2px solid black;
+  padding: 2rem;
 }
 
 input {
@@ -23,4 +31,8 @@ form {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+textarea {
+  resize: none;
 }

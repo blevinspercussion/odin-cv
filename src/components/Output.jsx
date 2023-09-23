@@ -1,6 +1,6 @@
 import React from "react";
 
-function Output({ firstName, lastName, email, phone, schools }) {
+function Output({ firstName, lastName, email, phone, schools, works }) {
   return (
     <div>
       <h1>Output</h1>
@@ -10,14 +10,39 @@ function Output({ firstName, lastName, email, phone, schools }) {
       <p>
         {email} - {phone}
       </p>
-      <h2>Education</h2>
-      <ul>
-        {schools?.map((index) => (
-          <li key={index.schoolName} value={index.schoolName}>
-            {index.schoolName} - {index.fieldOfStudy} - {index.dateOfGraduation}
-          </li>
-        ))}
-      </ul>
+      <article id="education-info">
+        <h2>Education</h2>
+        <ul>
+          {schools?.map((index) => (
+            <li key={index.schoolName} value={index.schoolName}>
+              <h3>{index.schoolName}</h3>
+              <p>
+                <strong>Degree: </strong>
+                {index.fieldOfStudy}
+              </p>
+              <p>
+                <strong>Date of Graduation: </strong>
+                {index.dateOfGraduation}
+              </p>
+              <hr />
+            </li>
+          ))}
+        </ul>
+      </article>
+      <article id="work-info">
+        <h2>Experience</h2>
+        <ul>
+          {works?.map((index) => (
+            <li key={index.workName} value={index.workName}>
+              <h3>{index.workName}</h3>
+              <p>Position/Title: {index.position}</p>
+              <p>Job Description: {index.tasks}</p>
+              <p>Start Date: {index.startDate}</p>
+              <p>End Date: {index.endDate}</p>
+            </li>
+          ))}
+        </ul>
+      </article>
     </div>
   );
 }
