@@ -13,8 +13,15 @@
   padding: 2rem;
 }
 
-input {
-  margin: 1em;
+.input-section {
+  width: 25vw;
+  flex-wrap: wrap;
+  margin-right: 5vw;
+}
+
+.output-section {
+  width: 25vw;
+  margin-left: 5vw;
 }
 
 form {
@@ -30,7 +37,7 @@ form {
 .page-container {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 textarea {

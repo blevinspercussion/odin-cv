@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 
-import Input from "./components/Input";
 import Output from "./components/Output";
+import GeneralInfo from "./components/GeneralInfo";
+import Education from "./components/Education";
+import Work from "./components/Work";
 
 import React from "react";
 
@@ -160,44 +162,52 @@ function App() {
 
   return (
     <div className="page-container">
-      <Input
-        firstName={firstName}
-        lastName={lastName}
-        email={email}
-        phone={phone}
-        schoolName={schoolName}
-        fieldOfStudy={fieldOfStudy}
-        dateOfGraduation={dateOfGraduation}
-        workName={workName}
-        position={position}
-        tasks={tasks}
-        startDate={startDate}
-        endDate={endDate}
-        handleFirstName={handleFirstName}
-        handleLastName={handleLastName}
-        handleEmail={handleEmail}
-        handlePhone={handlePhone}
-        handleSchoolName={handleSchoolName}
-        handleFieldOfStudy={handleFieldOfStudy}
-        handleDateOfGraduation={handleDateOfGraduation}
-        handleSchools={handleSchools}
-        handleSchoolSubmit={handleSchoolSubmit}
-        handleWorkName={handleWorkName}
-        handlePosition={handlePosition}
-        handleTasks={handleTasks}
-        handleStartDate={handleStartDate}
-        handleEndDate={handleEndDate}
-        handleWorks={handleWorks}
-        handleWorkSubmit={handleWorkSubmit}
-      />
-      <Output
-        firstName={firstName}
-        lastName={lastName}
-        email={email}
-        phone={phone}
-        schools={schools}
-        works={works}
-      />
+      <section className="input-section">
+        <GeneralInfo
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          phone={phone}
+          handleFirstName={handleFirstName}
+          handleLastName={handleLastName}
+          handleEmail={handleEmail}
+          handlePhone={handlePhone}
+        />
+        <Education
+          schoolName={schoolName}
+          fieldOfStudy={fieldOfStudy}
+          dateOfGraduation={dateOfGraduation}
+          handleSchoolName={handleSchoolName}
+          handleFieldOfStudy={handleFieldOfStudy}
+          handleDateOfGraduation={handleDateOfGraduation}
+          handleSchools={handleSchools}
+          handleSchoolSubmit={handleSchoolSubmit}
+        />
+        <Work
+          workName={workName}
+          position={position}
+          tasks={tasks}
+          startDate={startDate}
+          endDate={endDate}
+          handleWorkName={handleWorkName}
+          handlePosition={handlePosition}
+          handleTasks={handleTasks}
+          handleStartDate={handleStartDate}
+          handleEndDate={handleEndDate}
+          handleWorks={handleWorks}
+          handleWorkSubmit={handleWorkSubmit}
+        />
+      </section>
+      <section className="output-section">
+        <Output
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          phone={phone}
+          schools={schools}
+          works={works}
+        />
+      </section>
     </div>
   );
 }
