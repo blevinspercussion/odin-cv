@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function Output({ firstName, lastName, email, phone, schools, works }) {
   return (
@@ -14,7 +15,7 @@ function Output({ firstName, lastName, email, phone, schools, works }) {
         <h2>Education</h2>
         <ul>
           {schools?.map((index) => (
-            <li key={index.schoolName} value={index.schoolName}>
+            <li key={uuidv4()} value={index.schoolName}>
               <h3>{index.schoolName}</h3>
               <p>
                 <strong>Degree: </strong>
@@ -33,7 +34,7 @@ function Output({ firstName, lastName, email, phone, schools, works }) {
         <h2>Experience</h2>
         <ul>
           {works?.map((index) => (
-            <li key={index.workName} value={index.workName}>
+            <li key={uuidv4()} value={index.workName}>
               <h3>{index.workName}</h3>
               <p>Position/Title: {index.position}</p>
               <p>Job Description: {index.tasks}</p>
