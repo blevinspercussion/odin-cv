@@ -164,6 +164,14 @@ function App() {
         lastName={lastName}
         email={email}
         phone={phone}
+        schoolName={schoolName}
+        fieldOfStudy={fieldOfStudy}
+        dateOfGraduation={dateOfGraduation}
+        workName={workName}
+        position={position}
+        tasks={tasks}
+        startDate={startDate}
+        endDate={endDate}
         handleFirstName={handleFirstName}
         handleLastName={handleLastName}
         handleEmail={handleEmail}

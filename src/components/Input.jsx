@@ -7,6 +7,14 @@ function Input({
   lastName,
   email,
   phone,
+  schoolName,
+  fieldOfStudy,
+  dateOfGraduation,
+  workName,
+  position,
+  tasks,
+  startDate,
+  endDate,
   handleFirstName,
   handleLastName,
   handleEmail,
@@ -85,6 +93,20 @@ function Input({
     e.preventDefault();
   };
 
+  const schoolFormValid = () => {
+    return schoolName.length && fieldOfStudy.length && dateOfGraduation.length;
+  };
+
+  const workFormValid = () => {
+    return (
+      workName.length &&
+      position.length &&
+      tasks.length &&
+      startDate.length &&
+      endDate.length
+    );
+  };
+
   return (
     <div>
       <h1>Input</h1>
@@ -143,7 +165,11 @@ function Input({
         />
         <label htmlFor="date-of-graduation">Date of Graduation:</label>
         <input type="date" onChange={handleDateOfGraduationChange} required />
-        <button type="submit" onClick={handleSchoolSubmitChange}>
+        <button
+          type="submit"
+          disabled={!schoolFormValid()}
+          onClick={handleSchoolSubmitChange}
+        >
           Add School
         </button>
       </form>
@@ -187,7 +213,11 @@ function Input({
           required
           onChange={handleEndDateChange}
         />
-        <button type="submit" onClick={handleWorkSubmitChange}>
+        <button
+          type="submit"
+          disabled={!workFormValid()}
+          onClick={handleWorkSubmitChange}
+        >
           Add Work Experience
         </button>
       </form>
