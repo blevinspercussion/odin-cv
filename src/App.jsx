@@ -63,11 +63,12 @@ function App() {
   };
 
   const handleFieldOfStudy = (newFieldOfStudy) => {
-    setSchoolName(newFieldOfStudy);
+    setFieldOfStudy(newFieldOfStudy);
     setSchool((school) => ({
       ...school,
       fieldOfStudy: newFieldOfStudy,
     }));
+    console.log(fieldOfStudy);
   };
 
   const handleDateOfGraduation = (newDateOfGraduation) => {

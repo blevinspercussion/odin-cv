@@ -118,7 +118,6 @@ function Input({
           placeholder="First Name"
           name="firstName"
           onChange={handleFirstNameChange}
-          required
         />
         <label htmlFor="lastName">Last Name: </label>
         <input
@@ -126,7 +125,6 @@ function Input({
           placeholder="Last Name"
           name="lastName"
           onChange={handleLastNameChange}
-          required
         />
         <label htmlFor="email">Email: </label>
         <input
@@ -134,7 +132,6 @@ function Input({
           placeholder="email@domain.com"
           name="email"
           onChange={handleEmailChange}
-          required
         />
         <label htmlFor="phone">Phone Number: </label>
         <input
@@ -142,7 +139,6 @@ function Input({
           placeholder="xxx-xxx-xxxx"
           name="phone"
           onChange={handlePhoneChange}
-          required
         />
       </form>
       <h2>School Information</h2>
@@ -153,7 +149,6 @@ function Input({
           name="school-name"
           placeholder="State University"
           onChange={handleSchoolNameChange}
-          required
         />
         <label htmlFor="field-of-study">Field of Study/Degree:</label>
         <input
@@ -161,10 +156,9 @@ function Input({
           name="field-of-study"
           placeholder="B.S. Computer Science"
           onChange={handleFieldOfStudyChange}
-          required
         />
         <label htmlFor="date-of-graduation">Date of Graduation:</label>
-        <input type="date" onChange={handleDateOfGraduationChange} required />
+        <input type="date" onChange={handleDateOfGraduationChange} />
         <button
           type="submit"
           disabled={!schoolFormValid()}
@@ -181,7 +175,6 @@ function Input({
           name="work-name"
           placeholder="Acme Products"
           onChange={handleWorkNameChange}
-          required
         />
         <label htmlFor="position">Position:</label>
         <input
@@ -189,30 +182,18 @@ function Input({
           name="position"
           placeholder="Product Tester"
           onChange={handlePositionChange}
-          required
         />
         <label htmlFor="tasks">Tasks:</label>
         <textarea
           name="tasks"
           cols="25"
           rows="10"
-          required
           onChange={handleTasksChange}
         ></textarea>
         <label htmlFor="start-date">Start Date:</label>
-        <input
-          type="date"
-          name="start-date"
-          required
-          onChange={handleStartDateChange}
-        />
+        <input type="date" name="start-date" onChange={handleStartDateChange} />
         <label htmlFor="end-date">End Date:</label>
-        <input
-          type="date"
-          name="end-date"
-          required
-          onChange={handleEndDateChange}
-        />
+        <input type="date" name="end-date" onChange={handleEndDateChange} />
         <button
           type="submit"
           disabled={!workFormValid()}
