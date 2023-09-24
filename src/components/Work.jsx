@@ -11,7 +11,6 @@ function Work({
   handleTasks,
   handleStartDate,
   handleEndDate,
-  //   handleWorks,
   handleWorkSubmit,
 }) {
   const handleWorkNameChange = (e) => {

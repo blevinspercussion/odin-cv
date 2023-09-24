@@ -4,42 +4,48 @@ import { v4 as uuidv4 } from "uuid";
 function Output({ firstName, lastName, email, phone, schools, works }) {
   return (
     <div>
-      <h1>Output</h1>
       <h2>
         {firstName} {lastName}
       </h2>
-      <p>
-        {email} - {phone}
-      </p>
+      <article className="sub-heading">
+        <p>{email}</p>
+        <p>{phone}</p>
+      </article>
       <article id="education-info">
-        <h2>Education</h2>
+        <h2 className="section-heading">Education</h2>
+        <hr />
         <ul>
           {schools?.map((index) => (
             <li key={uuidv4()} value={index.schoolName}>
-              <h3>{index.schoolName}</h3>
-              <p>
-                <strong>Degree: </strong>
-                {index.fieldOfStudy}
-              </p>
-              <p>
-                <strong>Date of Graduation: </strong>
-                {index.dateOfGraduation}
-              </p>
-              <hr />
+              <div className="school-work-info">
+                <p className="school-work-left">
+                  <strong>{index.schoolName}</strong>,{" "}
+                  <em>{index.fieldOfStudy}</em>
+                </p>
+                <p className="school-work-right">{index.dateOfGraduation}</p>
+              </div>
             </li>
           ))}
         </ul>
       </article>
       <article id="work-info">
-        <h2>Experience</h2>
+        <h2 className="section-heading">Work Experience</h2>
+        <hr />
         <ul>
           {works?.map((index) => (
             <li key={uuidv4()} value={index.workName}>
-              <h3>{index.workName}</h3>
-              <p>Position/Title: {index.position}</p>
-              <p>Job Description: {index.tasks}</p>
-              <p>Start Date: {index.startDate}</p>
-              <p>End Date: {index.endDate}</p>
+              <div className="school-work-info">
+                <div className="school-work-left">
+                  <p>
+                    <strong>{index.workName}</strong>, <em>{index.position}</em>
+                  </p>
+                  <p>{index.tasks}</p>
+                </div>
+                <div className="school-work-right">
+                  <p>Start Date: {index.startDate}</p>
+                  <p>End Date: {index.endDate}</p>
+                </div>
+              </div>
             </li>
           ))}
         </ul>
